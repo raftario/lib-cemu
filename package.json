@@ -7,6 +7,9 @@
   "author": "Raphaël Thériault",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "test": "node ./tests/game.js"
+  },
   "devDependencies": {
     "standard": "^12.0.1"
   },

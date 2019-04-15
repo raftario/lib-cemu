@@ -3,6 +3,7 @@
 const rp = require('request-promise-native')
 
 const Game = require('./Game')
+const code2id = require('../functions/game/code2id')
 
 module.exports = class GameWiki extends Game {
   // name
@@ -24,7 +25,7 @@ module.exports = class GameWiki extends Game {
       pageid: 'Unknown',
       title: 'Unknown',
       url: 'http://compat.cemu.info/wiki/',
-      ids: [GameWiki.code2id(this.code, this.publisherCode)],
+      ids: [code2id(this.code, this.publisherCode)],
       developer: 'Unknown',
       publisher: 'Unknown',
       series: 'Unknown',
@@ -36,18 +37,6 @@ module.exports = class GameWiki extends Game {
     }
 
     this.parse()
-  }
-
-  // Take a Game and return a GameWiki
-  static addWiki (game) {
-    return new GameWiki(game.name, game.version, game.id, game.code, game.publisherCode, game.publisher)
-  }
-
-  // Convert product code to game id
-  static code2id (code, publisherCode) {
-    let id = code.slice(-4)
-    id += publisherCode.slice(-2)
-    return id
   }
 
   parse () {

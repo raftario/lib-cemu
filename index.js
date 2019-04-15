@@ -1,3 +1,3 @@
 'use strict'
 
-exports.classes = require('./classes')
+exports.game = require('./functions/game')
