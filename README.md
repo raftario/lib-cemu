@@ -19,6 +19,13 @@ Node library to facilitate basic interactions with the Wii U emulator CEMU
   * [Release](#Release)
 * [Contributing](#Contributing)
 
+## Functions
+### game
+Name | Return | Arguments | Optional arguments | Description
+-----|--------|-----------|--------------------|------------
+`addWiki` | GameWiki | `Game game` | | Take a game and return a GameWiki
+`code2id` | string | `string code`, `string publisherCode` | | Convert a code and a publisher code into a game ID
+
 ## Classes
 ### Game
 #### Properties
@@ -60,15 +67,10 @@ Name | Type | Description | Example
 `wiki.modes` | string array | Play modes of the game | [ 'Single-player', 'Multiplayer (5)' ]
 `wiki.input` | string array | Input devices accepted by the game | [ 'GamePad', 'Pro Controller', 'Wii Remote', 'Classic Controller Pro' ]
 `wiki.rating` | string | How well the game runs on Cemu | 'Playable'
-#### Static methods
-Name | Return | Arguments | Optional arguments | Description
------|--------|-----------|--------------------|------------
-`addWiki` | GameWiki | `Game game` | | Take a game and return a GameWiki
-`code2id` | string | `string code`, `string publisherCode` | | Convert a code and a publisher code into a game ID
 #### Methods
 Name | Return | Arguments | Optional arguments | Description
 -----|--------|-----------|--------------------|------------
-`parse` | void | self | | Parse game information from the Cemu wiki
+`parse` | Promise | | `function callback(error)` | Parse game information from the Cemu wiki
 ### Release
 #### Properties
 Name | Type | Description | Example
@@ -77,4 +79,8 @@ Name | Type | Description | Example
 `download` | string | Download URL
 `changelog` | string | Changelog URL
 ## Contributing
-Always run `standard --fix` before commiting.
+**NO CONTRIBUTION RELATED TO PIRACY WILL BE ACCEPTED**
+### Important guidelines
+* Always run `standard --fix` before commiting.
+* Functions containing async operations must return a Promise and accept a `callback(error)` function as a parameter
+* Everything you add should be documented following the style of the existing documentation

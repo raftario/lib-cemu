@@ -20,8 +20,8 @@ console.log(nsmbu.formatPlaytime())
 console.log(nsmbu.formatLastPlayed())
 console.log(nsmbu.formatLastPlayed('fr-CA', true))
 
-nsmbu = cemu.game.addWiki(nsmbu)
+let nsmbu1 = cemu.game.addWiki(nsmbu)
+let nsmbu2 = cemu.game.addWiki(nsmbu)
 
-setTimeout(() => {
-  console.log(nsmbu)
-}, 4000)
+nsmbu1.parse(() => console.log(nsmbu1))
+nsmbu2.parse().then(() => console.log(nsmbu2))
