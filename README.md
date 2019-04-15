@@ -1,9 +1,9 @@
 # lib-cemu
-![npm](https://img.shields.io/npm/v/lib-cemu.svg)
+[![npm](https://img.shields.io/npm/v/lib-cemu.svg)](https://www.npmjs.com/package/lib-cemu)
 ![GitHub](https://img.shields.io/github/license/raftario/lib-cemu.svg)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 ![npm](https://img.shields.io/npm/dt/lib-cemu.svg)
-![GitHub stars](https://img.shields.io/github/stars/raftario/lib-cemu.svg?style=social)
+[![GitHub stars](https://img.shields.io/github/stars/raftario/lib-cemu.svg?style=social)](https://github.com/raftario/lib-cemu)
 
 ![David](https://img.shields.io/david/raftario/lib-cemu.svg)
 ![GitHub issues](https://img.shields.io/github/issues/raftario/lib-cemu.svg)
