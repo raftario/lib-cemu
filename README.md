@@ -25,8 +25,9 @@ Node library to facilitate basic interactions with the Wii U emulator CEMU
 ### game
 Name | Return | Arguments | Optional arguments | Description
 -----|--------|-----------|--------------------|------------
-`addWiki` | GameWiki | `Game game` | | Take a game and return a GameWiki
+`addWiki` | GameWiki | `Game game` | | Convert a Game into a GameWiki
 `code2id` | string | `string code`, `string publisherCode` | | Convert a code and a publisher code into a game ID
+`create` | Game | `string name`, `string path`, `string id`, `string code`, `string publisherCode`, `string publisher` | `int version = 0`, `int dlcVersion = 0`, `int playtime = 0`, `int lastPlayed = 0` | Create a Game
 
 ## Classes
 ### Game
