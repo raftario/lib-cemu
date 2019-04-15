@@ -1,3 +1,3 @@
 'use strict'
 
-exports.game = require('./functions/game')
+exports.game = require('./modules/game')

@@ -3,21 +3,26 @@
 const rp = require('request-promise-native')
 
 const Game = require('./Game')
-const code2id = require('../functions/game/code2id')
+const code2id = require('../modules/game/code2id')
 
-module.exports = class GameWiki extends Game {
-  // name
-  // path
-  // id
-  // code
-  // publisherCode
-  // publisher
-  // version
-  // dlcVersion
-  // playTime
-  // lastPlayed
-  // wiki
-
+/**
+ * Represents an installed game and its Cemu wiki entry
+ * @extends Game
+ * @property {object} wiki - Cemu wiki information
+ * @property {int} wiki.pageid - Cemu wiki information
+ * @property {string} wiki.title - Cemu wiki page id
+ * @property {array} wiki.ids - Game title
+ * @property {string} wiki.developer - List of game IDs
+ * @property {string} wiki.publisher - Game developer
+ * @property {string} wiki.series - Game publisher
+ * @property {object} wiki.released - Series the game is part of
+ * @property {array} wiki.genre - Release dates of the game
+ * @property {array} wiki.modes - Genres of the game
+ * @property {array} wiki.input - Play modes of the game
+ * @property {string} wiki.rating - Input devices accepted by the game
+ */
+class GameWiki extends Game {
+  /** @private */
   constructor (name, path, id, code, publisherCode, publisher, version, dlcVersion, playTime, lastPlayed) {
     super(name, path, id, code, publisherCode, publisher, version, dlcVersion, playTime, lastPlayed)
 
@@ -37,6 +42,11 @@ module.exports = class GameWiki extends Game {
     }
   }
 
+  /**
+   * Parse game information from the wiki
+   * @param {function} [callback]
+   * @return {Promise}
+   */
   parse (callback) {
     return new Promise((resolve, reject) => {
       let rpOptions = {
@@ -85,8 +95,8 @@ module.exports = class GameWiki extends Game {
             this.wiki.series = /(?<=\|series = ).+?(?=\n)/g.exec(infobox)[0] || this.wiki.series
 
             let released = /(?<=\|released = ).+?(?=\n)/g.exec(infobox)[0]
-                .replace(/{{vgrelease\||}}/g, '')
-                .split('|') ||
+              .replace(/{{vgrelease\||}}/g, '')
+              .split('|') ||
               this.wiki.released
             if (released !== this.wiki.released) {
               this.wiki.released = {}
@@ -124,3 +134,5 @@ module.exports = class GameWiki extends Game {
     })
   }
 }
+
+module.exports = GameWiki

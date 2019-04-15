@@ -2,7 +2,13 @@
 
 const GameWiki = require('../../classes').GameWiki
 
-module.exports = (game) => {
+/**
+ * Convert a Game into a GameWiki
+ * @param {Game} game
+ * @return {GameWiki}
+ * @memberOf module:game
+ */
+function addWiki (game) {
   return new GameWiki(
     game.name,
     game.path,
@@ -16,3 +22,5 @@ module.exports = (game) => {
     game.lastPlayed
   )
 }
+
+module.exports = addWiki
