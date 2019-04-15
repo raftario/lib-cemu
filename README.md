@@ -1,4 +1,14 @@
 # lib-cemu
+![npm](https://img.shields.io/npm/v/lib-cemu.svg)
+![GitHub](https://img.shields.io/github/license/raftario/lib-cemu.svg)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![npm](https://img.shields.io/npm/dt/lib-cemu.svg)
+![GitHub stars](https://img.shields.io/github/stars/raftario/lib-cemu.svg?style=social)
+
+![David](https://img.shields.io/david/raftario/lib-cemu.svg)
+![GitHub issues](https://img.shields.io/github/issues/raftario/lib-cemu.svg)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/raftario/lib-cemu.svg)
+
 Node library to facilitate basic interactions with the Wii U emulator CEMU  
 **THIS LIBRARY IS STILL IN EARLY DEVELOPMENT AND IS PUBLISHED ONLY FOR DEBUGGING PURPOSE. DO NOT USE IT.**
 
@@ -16,14 +26,23 @@ Name | Type | Description | Example
 -----|------|-------------|--------
 `name` | string | Name of the game
 `version` | int | Version of the game
+`dlcVersion` | int | Version of the DLC
+`path` | string | Path to the game directory
 `id` | string | Game ID | '0005000010101D00'
 `code` | string | Game code | 'WUP-P-ARPE'
 `publisherCode` | string | Publisher code | '0001'
 `publisher` | string | Publisher of the game
+`playTime` | int | Seconds spent in game
+`lastPlayed` | int *(Unix timestamp)* | Last time the game was played
 #### Constructor
 Arguments | Optional arguments
 ----------|-------------------
-`string name`, `int version`, `string id` | `string code = 'Unkwnown'`, `string publisherCode = 'Unkwnown'`, `string publisher = 'Unkwnown'`
+`string name`, `int version`, `int dlcVersion`, `string path`, `string id`, `string code`, `string publisherCode`, `string publisher` `int playtime`, `int lastPlayed` |
+#### Methods
+Name | Return | Arguments | Optional arguments | Description
+-----|--------|-----------|--------------------|------------
+`formatPlaytime` | string | self | | Format the playtime in *h:mm* format and return it
+`formatLastPlayed` | string | self | `string locale = 'en-US`, `bool utc = false` | Format last played time and return it
 ### GameWiki
 > (extends [Game](#Game))
 #### Properties

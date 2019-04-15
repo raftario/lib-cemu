@@ -6,13 +6,19 @@ const Game = require('./Game')
 
 module.exports = class GameWiki extends Game {
   // name
+  // version
+  // dlcVersion
+  // path
+  // id
   // code
   // publisherCode
   // publisher
+  // playTime
+  // lastPlayed
   // wiki
 
-  constructor (name, version, id, code, publisherCode, publisher) {
-    super(name, version, id, code, publisherCode, publisher)
+  constructor (name, version, dlcVersion, path, id, code, publisherCode, publisher, playTime, lastPlayed) {
+    super(name, version, dlcVersion, path, id, code, publisherCode, publisher, playTime, lastPlayed)
 
     this.wiki = {
       pageid: 'Unknown',
