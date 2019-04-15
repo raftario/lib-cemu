@@ -7,19 +7,19 @@ const code2id = require('../functions/game/code2id')
 
 module.exports = class GameWiki extends Game {
   // name
-  // version
-  // dlcVersion
   // path
   // id
   // code
   // publisherCode
   // publisher
+  // version
+  // dlcVersion
   // playTime
   // lastPlayed
   // wiki
 
-  constructor (name, version, dlcVersion, path, id, code, publisherCode, publisher, playTime, lastPlayed) {
-    super(name, version, dlcVersion, path, id, code, publisherCode, publisher, playTime, lastPlayed)
+  constructor (name, path, id, code, publisherCode, publisher, version, dlcVersion, playTime, lastPlayed) {
+    super(name, path, id, code, publisherCode, publisher, version, dlcVersion, playTime, lastPlayed)
 
     this.wiki = {
       pageid: 'Unknown',
@@ -85,8 +85,8 @@ module.exports = class GameWiki extends Game {
             this.wiki.series = /(?<=\|series = ).+?(?=\n)/g.exec(infobox)[0] || this.wiki.series
 
             let released = /(?<=\|released = ).+?(?=\n)/g.exec(infobox)[0]
-              .replace(/{{vgrelease\||}}/g, '')
-              .split('|') ||
+                .replace(/{{vgrelease\||}}/g, '')
+                .split('|') ||
               this.wiki.released
             if (released !== this.wiki.released) {
               this.wiki.released = {}

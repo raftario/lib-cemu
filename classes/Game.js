@@ -2,25 +2,25 @@
 
 module.exports = class Game {
   // name
-  // version
-  // dlcVersion
   // path
   // id
   // code
   // publisherCode
   // publisher
+  // version
+  // dlcVersion
   // playTime
   // lastPlayed
 
-  constructor (name, version, dlcVersion, path, id, code, publisherCode, publisher, playTime, lastPlayed) {
+  constructor (name, path, id, code, publisherCode, publisher, version = 0, dlcVersion = 0, playTime = 0, lastPlayed = 0) {
     this.name = name
-    this.version = version
-    this.dlcVersion = dlcVersion
     this.path = path
     this.id = id
     this.code = code
     this.publisherCode = publisherCode
     this.publisher = publisher
+    this.version = version
+    this.dlcVersion = dlcVersion
     this.playTime = playTime
     this.lastPlayed = lastPlayed
   }

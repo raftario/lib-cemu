@@ -4,13 +4,13 @@ const cemu = require('..')
 
 let nsmbu = cemu.game.create(
   'New SUPER MARIO BROS. U',
-  64,
-  16,
   'D:\\Games\\Cemu\\games\\New SUPER MARIO BROS. U [ARPE0101]\\',
   '0005000010101D00',
   'WUP-P-ARPE',
   '0001',
   'Nintendo',
+  64,
+  16,
   3581,
   1554768480
 )

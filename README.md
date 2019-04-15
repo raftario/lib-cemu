@@ -13,6 +13,8 @@ Node library to facilitate basic interactions with the Wii U emulator CEMU
 **THIS LIBRARY IS STILL IN EARLY DEVELOPMENT AND IS PUBLISHED ONLY FOR DEBUGGING PURPOSE. DO NOT USE IT.**
 
 ## Index
+* [Functions](#Functions)
+  * [game](#game)
 * [Classes](#Classes)
   * [Game](#Game)
   * [GameWiki](#GameWiki)
@@ -34,7 +36,7 @@ Name | Type | Description | Example
 `name` | string | Name of the game
 `version` | int | Version of the game
 `dlcVersion` | int | Version of the DLC
-`path` | string | Path to the game directory
+`path` | string *(Path)* | Path to the game directory
 `id` | string | Game ID | '0005000010101D00'
 `code` | string | Game code | 'WUP-P-ARPE'
 `publisherCode` | string | Publisher code | '0001'
@@ -44,7 +46,7 @@ Name | Type | Description | Example
 #### Constructor
 Arguments | Optional arguments
 ----------|-------------------
-`string name`, `int version`, `int dlcVersion`, `string path`, `string id`, `string code`, `string publisherCode`, `string publisher` `int playtime`, `int lastPlayed` |
+`string name`, `string path`, `string id`, `string code`, `string publisherCode`, `string publisher` | `int version = 0`, `int dlcVersion = 0`, `int playtime = 0`, `int lastPlayed = 0`
 #### Methods
 Name | Return | Arguments | Optional arguments | Description
 -----|--------|-----------|--------------------|------------
@@ -76,8 +78,8 @@ Name | Return | Arguments | Optional arguments | Description
 Name | Type | Description | Example
 -----|------|-------------|--------
 `version` | string | Version | '1.15.1'
-`download` | string | Download URL
-`changelog` | string | Changelog URL
+`download` | string *(URL)* | Download URL
+`changelog` | string *(URL)* | Changelog URL
 ## Contributing
 **NO CONTRIBUTION RELATED TO PIRACY WILL BE ACCEPTED**
 ### Important guidelines
