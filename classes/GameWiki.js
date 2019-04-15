@@ -92,33 +92,36 @@ module.exports = class GameWiki extends Game {
         if (!data.query.pages[0].missing) {
           let infobox = data.query.pages[0].revisions[0].content
 
-          this.wiki.developer = infobox.match(/(?<=\|developer = ).+?(?=\n)/g)[0]
-          this.wiki.publisher = infobox.match(/(?<=\|publisher = ).+?(?=\n)/g)[0]
-          this.wiki.series = infobox.match(/(?<=\|series = ).+?(?=\n)/g)[0]
+          this.wiki.developer = /(?<=\|developer = ).+?(?=\n)/g.exec(infobox)[0] || this.wiki.developer
+          this.wiki.publisher = /(?<=\|publisher = ).+?(?=\n)/g.exec(infobox)[0] || this.wiki.publisher
+          this.wiki.series = /(?<=\|series = ).+?(?=\n)/g.exec(infobox)[0] || this.wiki.series
 
-          let released = infobox.match(/(?<=\|released = ).+?(?=\n)/g)[0]
+          let released = /(?<=\|released = ).+?(?=\n)/g.exec(infobox)[0]
             .replace(/{{vgrelease\||}}/g, '')
-            .split('|')
-          this.wiki.released = {}
-          released.forEach(rd => {
-            rd = rd.split('=')
-            if (rd[0] === 'WW') {
-              this.wiki.released.ww = rd[1]
-            } else if (rd[0] === 'NA' || rd[0] === 'USA' || rd[0] === 'NTSC-U') {
-              this.wiki.released.na = rd[1]
-            } else if (rd[0] === 'EU' || rd[0] === 'PAL') {
-              this.wiki.released.eu = rd[1]
-            } else if (rd[0] === 'JP' || rd[0] === 'JAP' || rd[0] === 'NTSC-J') {
-              this.wiki.released.jp = rd[1]
-            } else {
-              this.wiki.released.misc += `(${rd[0]}: ${rd[1]})`
-            }
-          })
+            .split('|') ||
+            this.wiki.released
+          if (released !== this.wiki.released) {
+            this.wiki.released = {}
+            released.forEach(rd => {
+              rd = rd.split('=')
+              if (rd[0] === 'WW') {
+                this.wiki.released.ww = rd[1]
+              } else if (rd[0] === 'NA' || rd[0] === 'USA' || rd[0] === 'NTSC-U') {
+                this.wiki.released.na = rd[1]
+              } else if (rd[0] === 'EU' || rd[0] === 'PAL') {
+                this.wiki.released.eu = rd[1]
+              } else if (rd[0] === 'JP' || rd[0] === 'JAP' || rd[0] === 'NTSC-J') {
+                this.wiki.released.jp = rd[1]
+              } else {
+                this.wiki.released.misc += `(${rd[0]}: ${rd[1]})`
+              }
+            })
+          }
 
-          this.wiki.genre = infobox.match(/(?<=\|genre = ).+?(?=\n)/g)[0].split(', ')
-          this.wiki.modes = infobox.match(/(?<=\|modes = ).+?(?=\n)/g)[0].split(', ')
-          this.wiki.input = infobox.match(/(?<=\|input = ).+?(?=\n)/g)[0].split(', ')
-          this.wiki.rating = infobox.match(/(?<=\|rating = ).+?(?=\n)/g)[0]
+          this.wiki.genre = /(?<=\|genre = ).+?(?=\n)/g.exec(infobox)[0].split(', ') || this.wiki.genre
+          this.wiki.modes = /(?<=\|modes = ).+?(?=\n)/g.exec(infobox)[0].split(', ') || this.wiki.modes
+          this.wiki.input = /(?<=\|input = ).+?(?=\n)/g.exec(infobox)[0].split(', ') || this.wiki.input
+          this.wiki.rating = /(?<=\|rating = ).+?(?=\n)/g.exec(infobox)[0] || this.wiki.rating
         }
       })
       .catch(err => {
