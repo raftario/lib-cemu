@@ -21,13 +21,6 @@
 </dd>
 </dl>
 
-## Members
-
-<dl>
-<dt><a href="#version">version</a></dt>
-<dd></dd>
-</dl>
-
 <a name="module_game"></a>
 
 ## game
@@ -228,14 +221,4 @@ Represents a Cemu release
 | version | <code>string</code> | Version |
 | download | <code>url</code> | Download link |
 | changelog | <code>url</code> | Changelog link |
-
-<a name="version"></a>
-
-## version
-**Kind**: global variable  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| version | <code>string</code> | lib-cemu version |
 
