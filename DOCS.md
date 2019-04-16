@@ -3,6 +3,8 @@
 <dl>
 <dt><a href="#module_game">game</a></dt>
 <dd></dd>
+<dt><a href="#module_release">release</a></dt>
+<dd></dd>
 </dl>
 
 ## Classes
@@ -70,6 +72,20 @@ Create a Game
 | [dlcVersion] | <code>int</code> | <code>0</code> | 
 | [playTime] | <code>int</code> | <code>0</code> | 
 | [lastPlayed] | <code>int</code> | <code>0</code> | 
+
+<a name="module_release"></a>
+
+## release
+<a name="module_release.create"></a>
+
+### release.create(version) ⇒ [<code>Release</code>](#Release)
+Create a Release
+
+**Kind**: static method of [<code>release</code>](#module_release)  
+
+| Param | Type |
+| --- | --- |
+| version | <code>string</code> | 
 
 <a name="Game"></a>
 
