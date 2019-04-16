@@ -9,7 +9,9 @@
   "private": false,
   "scripts": {
     "test": "node ./tests/game.js",
-    "docs": "jsdoc2md classes/*.js modules/*/*.js > DOCS.md"
+    "lint": "standard --fix",
+    "docs": "jsdoc2md classes/*.js modules/*/*.js > DOCS.md",
+    "prepublishOnly": "standard --fix & jsdoc2md classes/*.js modules/*/*.js > DOCS.md"
   },
   "devDependencies": {
     "jsdoc-to-markdown": "^4.0.1",
