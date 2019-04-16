@@ -10,13 +10,13 @@
 ## Classes
 
 <dl>
-<dt><a href="#Game">Game</a></dt>
+<dt><a href="#Game(2)">Game</a></dt>
 <dd><p>Represents an installed game</p>
 </dd>
-<dt><a href="#GameWiki">GameWiki</a> ⇐ <code><a href="#Game">Game</a></code></dt>
+<dt><a href="#GameWiki">GameWiki</a> ⇐ <code><a href="#Game(2)">Game</a></code></dt>
 <dd><p>Represents an installed game and its Cemu wiki entry</p>
 </dd>
-<dt><a href="#Release">Release</a></dt>
+<dt><a href="#Release(2)">Release</a></dt>
 <dd><p>Represents a Cemu release</p>
 </dd>
 </dl>
@@ -28,7 +28,7 @@
 * [game](#module_game)
     * [.addWiki(game)](#module_game.addWiki) ⇒ [<code>GameWiki</code>](#GameWiki)
     * [.code2id(code, publisherCode)](#module_game.code2id) ⇒ <code>string</code>
-    * [.create(name, path, id, code, publisherCode, publisher, [version], [dlcVersion], [playTime], [lastPlayed])](#module_game.create) ⇒ [<code>Game</code>](#Game)
+    * [.create(name, path, id, code, publisherCode, publisher, [version], [dlcVersion], [playTime], [lastPlayed])](#module_game.create) ⇒ [<code>Game</code>](#Game(2))
 
 <a name="module_game.addWiki"></a>
 
@@ -39,7 +39,7 @@ Convert a Game into a GameWiki
 
 | Param | Type |
 | --- | --- |
-| game | [<code>Game</code>](#Game) | 
+| game | [<code>Game</code>](#Game(2)) | 
 
 <a name="module_game.code2id"></a>
 
@@ -55,7 +55,7 @@ Convert a code and a publisher code into a game ID
 
 <a name="module_game.create"></a>
 
-### game.create(name, path, id, code, publisherCode, publisher, [version], [dlcVersion], [playTime], [lastPlayed]) ⇒ [<code>Game</code>](#Game)
+### game.create(name, path, id, code, publisherCode, publisher, [version], [dlcVersion], [playTime], [lastPlayed]) ⇒ [<code>Game</code>](#Game(2))
 Create a Game
 
 **Kind**: static method of [<code>game</code>](#module_game)  
@@ -78,12 +78,12 @@ Create a Game
 ## release
 
 * [release](#module_release)
-    * [.create(version)](#module_release.create) ⇒ [<code>Release</code>](#Release)
+    * [.create(version)](#module_release.create) ⇒ [<code>Release</code>](#Release(2))
     * [.download(release, path, [callback])](#module_release.download) ⇒ <code>Promise</code>
 
 <a name="module_release.create"></a>
 
-### release.create(version) ⇒ [<code>Release</code>](#Release)
+### release.create(version) ⇒ [<code>Release</code>](#Release(2))
 Create a Release
 
 **Kind**: static method of [<code>release</code>](#module_release)  
@@ -101,11 +101,11 @@ Download a Cemu release (zip) to a given path
 
 | Param | Type |
 | --- | --- |
-| release | [<code>Release</code>](#Release) | 
+| release | [<code>Release</code>](#Release(2)) | 
 | path | <code>path</code> | 
 | [callback] | <code>function</code> | 
 
-<a name="Game"></a>
+<a name="Game(2)"></a>
 
 ## Game
 Represents an installed game
@@ -126,36 +126,13 @@ Represents an installed game
 | playTime | <code>int</code> | Seconds spent in game |
 | lastPlayed | <code>timestamp</code> | Last time the game was played |
 
-
-* [Game](#Game)
-    * [.formatPlaytime()](#Game+formatPlaytime) ⇒ <code>string</code>
-    * [.formatLastPlayed([locale], [utc])](#Game+formatLastPlayed) ⇒ <code>string</code>
-
-<a name="Game+formatPlaytime"></a>
-
-### game.formatPlaytime() ⇒ <code>string</code>
-Format the playtime in *h:mm* format
-
-**Kind**: instance method of [<code>Game</code>](#Game)  
-<a name="Game+formatLastPlayed"></a>
-
-### game.formatLastPlayed([locale], [utc]) ⇒ <code>string</code>
-Format the last played time
-
-**Kind**: instance method of [<code>Game</code>](#Game)  
-
-| Param | Type | Default |
-| --- | --- | --- |
-| [locale] | <code>string</code> | <code>&quot;en-US&quot;</code> | 
-| [utc] | <code>boolean</code> | <code>false</code> | 
-
 <a name="GameWiki"></a>
 
-## GameWiki ⇐ [<code>Game</code>](#Game)
+## GameWiki ⇐ [<code>Game</code>](#Game(2))
 Represents an installed game and its Cemu wiki entry
 
 **Kind**: global class  
-**Extends**: [<code>Game</code>](#Game)  
+**Extends**: [<code>Game</code>](#Game(2))  
 **Properties**
 
 | Name | Type | Description |
@@ -173,12 +150,6 @@ Represents an installed game and its Cemu wiki entry
 | wiki.input | <code>array</code> | Play modes of the game |
 | wiki.rating | <code>string</code> | Input devices accepted by the game |
 
-
-* [GameWiki](#GameWiki) ⇐ [<code>Game</code>](#Game)
-    * [.parse([callback])](#GameWiki+parse) ⇒ <code>Promise</code>
-    * [.formatPlaytime()](#Game+formatPlaytime) ⇒ <code>string</code>
-    * [.formatLastPlayed([locale], [utc])](#Game+formatLastPlayed) ⇒ <code>string</code>
-
 <a name="GameWiki+parse"></a>
 
 ### gameWiki.parse([callback]) ⇒ <code>Promise</code>
@@ -190,25 +161,7 @@ Parse game information from the wiki
 | --- | --- |
 | [callback] | <code>function</code> | 
 
-<a name="Game+formatPlaytime"></a>
-
-### gameWiki.formatPlaytime() ⇒ <code>string</code>
-Format the playtime in *h:mm* format
-
-**Kind**: instance method of [<code>GameWiki</code>](#GameWiki)  
-<a name="Game+formatLastPlayed"></a>
-
-### gameWiki.formatLastPlayed([locale], [utc]) ⇒ <code>string</code>
-Format the last played time
-
-**Kind**: instance method of [<code>GameWiki</code>](#GameWiki)  
-
-| Param | Type | Default |
-| --- | --- | --- |
-| [locale] | <code>string</code> | <code>&quot;en-US&quot;</code> | 
-| [utc] | <code>boolean</code> | <code>false</code> | 
-
-<a name="Release"></a>
+<a name="Release(2)"></a>
 
 ## Release
 Represents a Cemu release
