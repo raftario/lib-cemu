@@ -76,6 +76,11 @@ Create a Game
 <a name="module_release"></a>
 
 ## release
+
+* [release](#module_release)
+    * [.create(version)](#module_release.create) ⇒ [<code>Release</code>](#Release)
+    * [.download(release, path, [callback])](#module_release.download) ⇒ <code>Promise</code>
+
 <a name="module_release.create"></a>
 
 ### release.create(version) ⇒ [<code>Release</code>](#Release)
@@ -86,6 +91,19 @@ Create a Release
 | Param | Type |
 | --- | --- |
 | version | <code>string</code> | 
+
+<a name="module_release.download"></a>
+
+### release.download(release, path, [callback]) ⇒ <code>Promise</code>
+Download a Cemu release to a given path
+
+**Kind**: static method of [<code>release</code>](#module_release)  
+
+| Param | Type |
+| --- | --- |
+| release | [<code>Release</code>](#Release) | 
+| path | <code>path</code> | 
+| [callback] | <code>function</code> | 
 
 <a name="Game"></a>
 

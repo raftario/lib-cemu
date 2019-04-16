@@ -5,3 +5,4 @@
  */
 
 exports.create = require('./create')
+exports.download = require('./download')

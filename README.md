@@ -18,10 +18,11 @@ Node library to facilitate basic interactions with the Wii U emulator CEMU
 ## Contributing
 **NO CONTRIBUTION RELATED TO PIRACY WILL BE ACCEPTED**
 ### Formatting
-* Always run `standard --fix` before commiting.
-* Everything you add should be documented using the JSDoc format and following the style already in use. You can run the `docs` command to automatically generate the docs.
+* This library uses the [JavaScript Standard Style](https://standardjs.com). It is automatically applied to committed files, but I still recommend you get used to it.
+* Everything you add should be documented using the JSDoc format and following the style already in use. You can run the `docs` command to automatically generate the docs. They are also automatically generated before commits.
+* Wrap long lines when possible, this makes everything much more eye-pleasing.
 ### Logic
-* Functions containing async operations must return a Promise and accept a `callback(error)` function as a parameter
+* Functions containing async operations must return a Promise and accept a `callback(error)` function as an optional parameter for flexibility.
 
 ## License
 This library is distributed under the [MIT License](LICENSE)

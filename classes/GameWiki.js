@@ -121,14 +121,12 @@ class GameWiki extends Game {
             this.wiki.input = /(?<=\|input = ).+?(?=\n)/g.exec(infobox)[0].split(', ') || this.wiki.input
             this.wiki.rating = /(?<=\|rating = ).+?(?=\n)/g.exec(infobox)[0] || this.wiki.rating
 
-            if (callback) {
-              callback()
-            }
+            if (callback) callback()
             resolve()
           }
         })
         .catch(err => {
-          if (callback) { callback(err) }
+          if (callback) callback(err)
           reject(err)
         })
     })
