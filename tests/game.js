@@ -1,6 +1,6 @@
 'use strict'
 
-const cemu = require('..')
+const cemu = require('../lib')
 
 module.exports = () => {
   let nsmbu = cemu.game.create(

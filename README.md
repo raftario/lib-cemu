@@ -22,6 +22,7 @@ Node library to facilitate basic interactions with the Wii U emulator CEMU
 * Everything you add should be documented using the JSDoc format and following the style already in use. You can run the `docs` command to automatically generate the docs. They are also automatically generated before commits.
 * Wrap long lines when possible, this makes everything much more eye-pleasing.
 ### Logic
+* Classes should not be accessible directly but only through functions.
 * Functions containing async operations must return a Promise and accept a `callback(error)` function as an optional parameter for flexibility.
 
 ## License

@@ -9,22 +9,27 @@
   ],
   "homepage": "https://github.com/raftario/lib-cemu",
   "bugs": "https://github.com/raftario/lib-cemu/issues",
-  "main": "index.js",
-  "repository": "https://github.com/raftario/lib-cemu",
+  "main": "lib/index.js",
+  "repository": "github:raftario/lib-cemu",
   "author": "Raphaël Thériault",
   "license": "MIT",
   "private": false,
   "files": [
-    "classes/*.js",
-    "modules/*/*.js"
+    "lib/**/*.js"
   ],
   "scripts": {
     "test": "node ./tests/index.js",
     "lint": "standard --fix",
-    "docs": "jsdoc2md classes/*.js modules/*/*.js > DOCS.md",
-    "prepublishOnly": "standard --fix & jsdoc2md classes/*.js modules/*/*.js > DOCS.md"
+    "docs": "jsdoc2md lib/index.js lib/**/*.js > DOCS.md",
+    "prepublishOnly": "standard --fix & jsdoc2md lib/index.js lib/**/*.js > DOCS.md"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prepublishOnly"
+    }
   },
   "devDependencies": {
+    "husky": "^1.3.1",
     "jsdoc-to-markdown": "^4.0.1",
     "standard": "^12.0.1"
   },

@@ -1,6 +1,6 @@
 'use strict'
 
-const cemu = require('..')
+const cemu = require('../lib')
 
 module.exports = () => {
   let cemu_1_15_4 = cemu.release.create('1.15.4')
