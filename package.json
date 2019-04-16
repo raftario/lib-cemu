@@ -1,6 +1,6 @@
 {
   "name": "lib-cemu",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Node library to facilitate basic interactions with the Wii U emulator CEMU",
   "keywords": [
     "cemu",
