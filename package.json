@@ -20,12 +20,14 @@
   "scripts": {
     "test": "node ./tests/index.js",
     "lint": "standard --fix",
+    "lint-test": "standard",
     "docs": "jsdoc2md lib/index.js lib/**/*.js > DOCS.md",
-    "prepublishOnly": "standard --fix & jsdoc2md lib/index.js lib/**/*.js > DOCS.md"
+    "prepublishOnly": "standard --fix && jsdoc2md lib/index.js lib/**/*.js > DOCS.md"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prepublishOnly"
+      "pre-commit": "npm run lint && npm run docs",
+      "pre-push": "npm run lint-test"
     }
   },
   "devDependencies": {
