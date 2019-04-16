@@ -2,11 +2,22 @@
   "name": "lib-cemu",
   "version": "0.4.1",
   "description": "Node library to facilitate basic interactions with the Wii U emulator CEMU",
+  "keywords": [
+    "cemu",
+    "wii u",
+    "emulator"
+  ],
+  "homepage": "https://github.com/raftario/lib-cemu",
+  "bugs": "https://github.com/raftario/lib-cemu/issues",
   "main": "index.js",
   "repository": "https://github.com/raftario/lib-cemu",
   "author": "Raphaël Thériault",
   "license": "MIT",
   "private": false,
+  "files": [
+    "classes/*.js",
+    "modules/*/*.js"
+  ],
   "scripts": {
     "test": "node ./tests/index.js",
     "lint": "standard --fix",
