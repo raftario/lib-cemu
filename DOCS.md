@@ -235,7 +235,7 @@ Represents a Cemu release
 **Kind**: global variable  
 **Properties**
 
-| Name | Type |
-| --- | --- |
-| version | <code>string</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| version | <code>string</code> | lib-cemu version |
 
