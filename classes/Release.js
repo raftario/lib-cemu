@@ -11,7 +11,7 @@ class Release {
   constructor (version) {
     this.version = version
     this.download = `http://cemu.info/releases/cemu_${version}.zip`
-    this.changelog = `http://cemu.info/changelog/cemu_${version}.txt`
+    this.changelog = `http://cemu.info/changelog/cemu_${version.replace(/\./g, '_')}.txt`
   }
 }
 

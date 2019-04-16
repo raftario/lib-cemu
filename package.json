@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "node ./tests/game.js",
+    "test": "node ./tests/index.js",
     "lint": "standard --fix",
     "docs": "jsdoc2md classes/*.js modules/*/*.js > DOCS.md",
     "prepublishOnly": "standard --fix & jsdoc2md classes/*.js modules/*/*.js > DOCS.md"
