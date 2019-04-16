@@ -19,6 +19,9 @@
 <dt><a href="#Release(2)">Release</a></dt>
 <dd><p>Represents a Cemu release</p>
 </dd>
+<dt><a href="#ReleaseInstall">ReleaseInstall</a> ⇐ <code><a href="#Release(2)">Release</a></code></dt>
+<dd><p>Represents an installed Cemu release</p>
+</dd>
 </dl>
 
 <a name="module_game"></a>
@@ -37,9 +40,9 @@ Convert a Game into a GameWiki
 
 **Kind**: static method of [<code>game</code>](#module_game)  
 
-| Param | Type |
-| --- | --- |
-| game | [<code>Game</code>](#Game(2)) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| game | [<code>Game</code>](#Game(2)) | Game to convert |
 
 <a name="module_game.code2id"></a>
 
@@ -48,10 +51,10 @@ Convert a code and a publisher code into a game ID
 
 **Kind**: static method of [<code>game</code>](#module_game)  
 
-| Param | Type |
-| --- | --- |
-| code | <code>string</code> | 
-| publisherCode | <code>string</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| code | <code>string</code> | Game code |
+| publisherCode | <code>string</code> | Game publisher code |
 
 <a name="module_game.create"></a>
 
@@ -80,6 +83,7 @@ Create a Game
 * [release](#module_release)
     * [.create(version)](#module_release.create) ⇒ [<code>Release</code>](#Release(2))
     * [.download(release, path, [callback])](#module_release.download) ⇒ <code>Promise</code>
+    * [.install(release, dir, [callback])](#module_release.install) ⇒ [<code>Promise.&lt;ReleaseInstall&gt;</code>](#ReleaseInstall)
 
 <a name="module_release.create"></a>
 
@@ -99,11 +103,24 @@ Download a Cemu release (zip) to a given path
 
 **Kind**: static method of [<code>release</code>](#module_release)  
 
-| Param | Type |
-| --- | --- |
-| release | [<code>Release</code>](#Release(2)) | 
-| path | <code>path</code> | 
-| [callback] | <code>function</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| release | [<code>Release</code>](#Release(2)) | Release to download |
+| path | <code>string</code> | Download path |
+| [callback] | <code>function</code> | Callback, receives an error object if an error occurs |
+
+<a name="module_release.install"></a>
+
+### release.install(release, dir, [callback]) ⇒ [<code>Promise.&lt;ReleaseInstall&gt;</code>](#ReleaseInstall)
+Download and install a Cemu release
+
+**Kind**: static method of [<code>release</code>](#module_release)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| release | [<code>Release</code>](#Release(2)) | Release to install |
+| dir | <code>string</code> | Install directory |
+| [callback] | <code>function</code> | Callback, receives a ReleaseInstall (or null) and error object if an error occurs |
 
 <a name="Game(2)"></a>
 
@@ -116,7 +133,7 @@ Represents an installed game
 | Name | Type | Description |
 | --- | --- | --- |
 | name | <code>string</code> | Name of the game |
-| path | <code>path</code> | Path to the game directory |
+| path | <code>string</code> | Path to the game directory |
 | id | <code>string</code> | Game ID |
 | code | <code>string</code> | Game code |
 | publisherCode | <code>string</code> | Publisher code |
@@ -157,9 +174,9 @@ Parse game information from the wiki
 
 **Kind**: instance method of [<code>GameWiki</code>](#GameWiki)  
 
-| Param | Type |
-| --- | --- |
-| [callback] | <code>function</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| [callback] | <code>function</code> | Callback, receives an error object if an error occurs |
 
 <a name="Release(2)"></a>
 
@@ -174,4 +191,18 @@ Represents a Cemu release
 | version | <code>string</code> | Version |
 | download | <code>url</code> | Download link |
 | changelog | <code>url</code> | Changelog link |
+
+<a name="ReleaseInstall"></a>
+
+## ReleaseInstall ⇐ [<code>Release</code>](#Release(2))
+Represents an installed Cemu release
+
+**Kind**: global class  
+**Extends**: [<code>Release</code>](#Release(2))  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| path | <code>string</code> | Installation folder path |
+| games | <code>array</code> | Installed games |
 

@@ -12,4 +12,15 @@ module.exports = () => {
   })
     .then(() => console.log('download promise'))
     .catch(err => console.error(err))
+
+  cemu.release.install(cemu1154, './temp/install', (install, err) => {
+    console.log('install callback')
+    if (err) console.error(err)
+    console.log(install)
+  })
+    .then(install => {
+      console.log('install promise')
+      console.log(install)
+    })
+    .catch(err => console.error(err))
 }
