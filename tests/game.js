@@ -21,9 +21,16 @@ module.exports = () => {
   console.log(nsmbu.formatLastPlayed())
   console.log(nsmbu.formatLastPlayed('fr-CA', true))
 
-  let nsmbu1 = cemu.game.addWiki(nsmbu)
-  let nsmbu2 = cemu.game.addWiki(nsmbu)
+  nsmbu = cemu.game.addWiki(nsmbu)
 
-  nsmbu1.parse(() => console.log(nsmbu1))
-  nsmbu2.parse().then(() => console.log(nsmbu2))
+  nsmbu.parse(err => {
+    if (err) console.error(err)
+    console.log('parse callback')
+    console.log(nsmbu)
+  })
+    .then(() => {
+      console.log('parse promise')
+      console.log(nsmbu)
+    })
+    .catch(err => console.error(err))
 }

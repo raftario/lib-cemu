@@ -95,7 +95,7 @@ Create a Release
 <a name="module_release.download"></a>
 
 ### release.download(release, path, [callback]) ⇒ <code>Promise</code>
-Download a Cemu release to a given path
+Download a Cemu release (zip) to a given path
 
 **Kind**: static method of [<code>release</code>](#module_release)  
 

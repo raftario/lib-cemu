@@ -4,7 +4,7 @@ const fs = require('fs')
 const request = require('request')
 
 /**
- * Download a Cemu release to a given path
+ * Download a Cemu release (zip) to a given path
  * @param {Release} release
  * @param {path} path
  * @param {function} [callback]
