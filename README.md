@@ -35,6 +35,8 @@ $ yarn add lib-cemu
 
 ## Contributing
 **NO CONTRIBUTION RELATED TO PIRACY WILL BE ACCEPTED**
+### Basic
+* Test everything and add test scripts when possible.
 ### Formatting
 * This library uses the [JavaScript Standard Style](https://standardjs.com). It is automatically applied to committed files, but I still recommend you get used to it.
 * Everything you add should be documented using the JSDoc format and following the style already in use. You can run the `docs` command to automatically generate the docs. They are also automatically generated before commits.
