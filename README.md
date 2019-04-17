@@ -42,7 +42,7 @@ $ yarn add lib-cemu
 ### Logic
 * Classes should not be accessible directly but only through functions.
 * Functions containing async operations must return a Promise and accept a `callback(error)` function as an optional parameter for flexibility.
-* Do not require wrappers modules for things that are done once or a few times. There should be as few dependencies as possible.
+* There should be as few dependencies as possible. Keep it small and simple.
 
 ## License
 This library is distributed under the [MIT License](LICENSE)
