@@ -12,6 +12,20 @@
 Node library to facilitate basic interactions with the Wii U emulator CEMU  
 **THIS LIBRARY IS STILL IN EARLY DEVELOPMENT AND IS PUBLISHED ONLY FOR DEBUGGING PURPOSE. DO NOT USE IT.**
 
+## Installation
+If you use npm >= 5 :
+```console
+$ npm i lib-cemu
+```
+If you use npm < 5 :
+```console
+$ npm i -S lib-cemu
+```
+If you use yarn :
+```console
+$ yarn add lib-cemu
+```
+
 ## Docs
 [Read the docs](DOCS.md), they should include pretty much anything you need.
 
@@ -24,6 +38,7 @@ Node library to facilitate basic interactions with the Wii U emulator CEMU
 ### Logic
 * Classes should not be accessible directly but only through functions.
 * Functions containing async operations must return a Promise and accept a `callback(error)` function as an optional parameter for flexibility.
+* Do not require wrappers modules for things that are done once or a few times. There should be as few dependencies as possible.
 
 ## License
 This library is distributed under the [MIT License](LICENSE)
