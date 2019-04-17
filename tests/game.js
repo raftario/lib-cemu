@@ -18,8 +18,6 @@ module.exports = () => {
 
   console.log(nsmbu)
   console.log(nsmbu.formatPlaytime())
-  console.log(nsmbu.formatLastPlayed())
-  console.log(nsmbu.formatLastPlayed('fr-CA', true))
 
   nsmbu = cemu.game.addWiki(nsmbu)
 

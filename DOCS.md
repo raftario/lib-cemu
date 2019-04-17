@@ -141,7 +141,7 @@ Represents an installed game
 | version | <code>int</code> | Version of the game |
 | dlcVersion | <code>int</code> | Version of the DLC |
 | playTime | <code>int</code> | Seconds spent in game |
-| lastPlayed | <code>timestamp</code> | Last time the game was played |
+| lastPlayed | <code>Date</code> | Last time the game was played |
 
 <a name="GameWiki"></a>
 
