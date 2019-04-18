@@ -1,12 +1,10 @@
 <h1 align="center">
-	<br>
     <a href="https://github.com/raftario/lib-cemu#readme"><img 
     	width="128" 
         alt="logo" 
         src="https://raw.githubusercontent.com/raftario/lib-cemu/master/assets/logo.svg?sanitize=true"></a>
     <br>
     lib-cemu
-    <br>
 </h1>
 
 <h3 align="center">
