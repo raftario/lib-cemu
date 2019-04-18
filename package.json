@@ -1,7 +1,7 @@
 {
   "name": "lib-cemu",
   "version": "0.6.1",
-  "description": "Node library to facilitate basic interactions with the Wii U emulator CEMU",
+  "description": "Lightweight Node.js library for Cemu utils",
   "keywords": [
     "cemu",
     "wii u",
