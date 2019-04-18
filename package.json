@@ -1,6 +1,6 @@
 {
   "name": "lib-cemu",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Lightweight Node.js library for Cemu utils",
   "keywords": [
     "cemu",
